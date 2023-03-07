@@ -10,6 +10,9 @@ function download(f_url){
     files.writeBytes(btyes_);
     return f_name;
 }
-
-
-download();
+download('https://raw.githubusercontent.com/samlau0086/autoclickapps/main/main.js');
+if(files.isFile('main.js')){
+    eval(files.read('main.js', encoding = 'utf-8'));
+}else{
+    toast('网络连接出错,请检查网络设置');
+}
